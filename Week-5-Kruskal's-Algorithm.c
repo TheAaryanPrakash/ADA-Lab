@@ -73,7 +73,7 @@ void kruskal(int cost[10][10], int n) {
     }
 }
 
-// Find function for Union-Find (with path compression could be added for efficiency)
+// Find function for Union-Find 
 int find(int parent[10], int i) {
     while (parent[i] != i) {
         i = parent[i];

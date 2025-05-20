@@ -16,10 +16,10 @@ int partition(int arr[], int low, int high) {
 
     while (i <= j) {
         while (i <= high && arr[i] <= pivot) {
-            i++;
+            i++;                                  //Looking for i greater than Pivot
         }
         while (arr[j] > pivot) {
-            j--;
+            j--;                                  //Looking for j less than Pivot
         }
         if (i < j) {
             swap(&arr[i], &arr[j]);

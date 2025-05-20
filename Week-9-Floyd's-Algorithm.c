@@ -6,7 +6,7 @@ int a[10][10], D[10][10], n;
 void floyd(int a[][10], int);
 int min(int, int);
 
-int main() {
+void main() {
     printf("Enter the no. of vertices: ");
     scanf("%d", &n);
 
@@ -29,8 +29,6 @@ int main() {
         }
         printf("\n");
     }
-
-    return 0;
 }
 
 void floyd(int a[][10], int n) {

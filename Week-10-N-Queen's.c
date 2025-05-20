@@ -43,7 +43,6 @@ void solve(int row) {
     }
 }
 
-int main() {
+void main() {
     solve(0);
-    return 0;
 }

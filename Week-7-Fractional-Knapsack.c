@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Item {
+typedef struct item {
     int value, weight;
-};
+} Item;
 
 int compare(const void* a, const void* b) {
-    struct Item* item1 = (struct Item*)a;
-    struct Item* item2 = (struct Item*)b;
+    Item* item1 = (Item*)a;
+    Item* item2 = (Item*)b;
     return item2->value * item1->weight - item1->value * item2->weight;
 }
 
-double fractionalKnapsack(int W, struct Item arr[], int n) {
+double fractionalKnapsack(int W, Item arr[], int n) {
     qsort(arr, n, sizeof(arr[0]), compare);
     double finalValue = 0.0;
 
@@ -28,13 +28,13 @@ double fractionalKnapsack(int W, struct Item arr[], int n) {
     return finalValue;
 }
 
-void main() {
+int main() {
     int n, W;
 
     printf("Enter the number of items: ");
     scanf("%d", &n);
 
-    struct Item arr[n];
+    Item arr[n];
 
     for (int i = 0; i < n; i++) {
         printf("Enter value and weight for item %d: ", i + 1);
@@ -46,4 +46,6 @@ void main() {
 
     double maxValue = fractionalKnapsack(W, arr, n);
     printf("Maximum value in Knapsack = %.2f\n", maxValue);
+
+    return 0;
 }
